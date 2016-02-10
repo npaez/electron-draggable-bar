@@ -27,13 +27,16 @@ This is the most basic structure:
          </span>
       </div>
       <div class="windows-buttons">
-         <span id="minimzeBtn" class="btn-header">
+         <span id="minimzeBtn"
+               class="btn-header">
             <i class="ion-android-remove"></i>
          </span>
-         <span id="maximazeBtn" class="btn-header">
+         <span id="maximazeBtn"
+               class="btn-header">
             <i class="ion-android-checkbox-outline-blank"></i>
          </span>
-         <span id="closeBtn" class="btn-header">
+         <span id="closeBtn"
+               class="btn-header">
             <i class="ion-android-close"></i>
          </span>
       </div>
@@ -64,13 +67,16 @@ Basic structure:
          </span>
       </div>
       <div class="windows-buttons">
-         <span id="minimzeBtn" class="btn-header">
+         <span id="minimzeBtn"
+               class="btn-header">
             <!-- icons -->
          </span>
-         <span id="maximazeBtn" class="btn-header">
+         <span id="maximazeBtn"
+               class="btn-header">
             <!-- icons -->
          </span>
-         <span id="closeBtn" class="btn-header">
+         <span id="closeBtn"
+               class="btn-header">
             <!-- icons -->
          </span>
       </div>
@@ -79,14 +85,17 @@ Basic structure:
    <div class="background-doble">
       <ul class="windows-menu">
          <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">First Menu</a>
+            <a href="#"
+               data-toggle="dropdown"
+               class="dropdown-toggle">
+            	<!-- menu name -->
+             </a>
             <ul class="dropdown-menu">
-               <li><a href="#">Action</a></li>
-               <li><a href="#">Another action</a></li>
-               <li><a href="#">Something else here</a></li>
-               <li class="separator"></li>
-               <li><a href="#">Separated link</a></li>
-               <li><a href="#">Another separated link</a></li>
+               <li>
+               	<a href="#">
+               		<!-- action -->
+               	</a>
+               </li>
             </ul>
          </li>
       </ul>
@@ -96,6 +105,7 @@ Basic structure:
 > **Note:** 
 > - *Don't forget* to include the `<div id="innerBlur"></div>`. This prevent the display in the dropdown-menus when the windows is not the main focus
 > - *Do not* modify the IDs. This will be improved in future releases.
+> - To separate a group of links from others, use `<li class="separator"></li>`
 
 
 Example:
