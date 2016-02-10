@@ -38,12 +38,12 @@ This is the most basic structure:
       </div>
    </div>
 </nav>
-<!-- Note: This example is using Ionicons. 
-     But it can work with other icon libraries. -->
 ```
+> **Note:** This example is using Ionicons. But it can work with other icon libraries.
+
+
 Result:
 
 ![electron-draggable-bar](/image/screen4.jpg)
-Format: ![Alt Text](url)
 
 
