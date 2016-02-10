@@ -45,7 +45,7 @@ This is the most basic structure:
 ```
 > **Note:** 
 > - This example is using Ionicons. But it can work with other icon libraries.
-> - *Do not* modify the IDs. This will be improved in future releases.
+> - **Do not** modify the IDs. This will be improved in future releases.
 
 
 Result:
@@ -103,8 +103,8 @@ Basic structure:
 </nav>
 ```
 > **Note:** 
-> - *Don't forget* to include the `<div id="innerBlur"></div>`. This prevent the display in the dropdown-menus when the windows is not the main focus
-> - *Do not* modify the IDs. This will be improved in future releases.
+> - **Don't forget** to include the `<div id="innerBlur"></div>`. This prevent the display in the dropdown-menus when the windows is not the main focus
+> - **Do not** modify the IDs. This will be improved in future releases.
 > - To separate a group of links from others, use `<li class="separator"></li>`
 
 
