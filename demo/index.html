@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>electron-drag-bar v0.0.1</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+      <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <link rel="stylesheet" href="../dist/electron-draggable-bar.css">
+   </head>
+   <body style="background-color: #fafafa">
+      <nav class="navigation-tool doble-tool">
+         <div id="innerBlur"></div>
+
+         <!-- simple tool -->
+         <div class="background-simple">
+            <div class="background">
+               <span class="windows-title">electron-drag-bar v0.0.1</span>
+            </div>
+            <div class="windows-buttons">
+               <i id="minimzeBtn" class="btn-header ion-android-remove"></i>
+               <i id="maximazeBtn" class="btn-header ion-android-checkbox-outline-blank"></i>
+               <i id="closeBtn" class="btn-header ion-android-close"></i>
+            </div>
+         </div>
+         
+         <!-- doble tool with dropdown buttons -->
+         <div class="background-doble">
+            <ul class="windows-menu">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">First Menu</a>
+                  <ul class="dropdown-menu">
+                     <li><a href="#">Action</a></li>
+                     <li><a href="#">Another action</a></li>
+                     <li><a href="#">Something else here</a></li>
+                     <li class="separator"></li>
+                     <li><a href="#">Separated link</a></li>
+                     <li><a href="#">Another separated link</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Second Menu</a>
+                  <ul class="dropdown-menu">
+                     <li><a href="#">Action</a></li>
+                     <li><a href="#">Another action</a></li>
+                     <li><a href="#">Something else here</a></li>
+                     <li class="separator"></li>
+                     <li><a href="#">Separated link</a></li>
+                     <li><a href="#">Another separated link</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu</a>
+                  <ul class="dropdown-menu">
+                     <li><a href="#">Action</a></li>
+                     <li><a href="#">Another action</a></li>
+                     <li><a href="#">Something else here</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
+      <script>require('../dist/electron-draggable-bar.js')</script>
+   </body>
+</html>
