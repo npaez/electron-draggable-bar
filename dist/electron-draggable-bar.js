@@ -3,7 +3,6 @@
    var BrowserWindow = remote.require('browser-window'); 
    var innerBlur = document.getElementById("innerBlur");
 
-
    function init() { 
       var closeBtn    = document.getElementById("closeBtn"),
           minimizeBtn = document.getElementById("minimzeBtn"),
