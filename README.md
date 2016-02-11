@@ -175,6 +175,17 @@ Example:
 </nav>
 ```
 
+## Fixing scroll-bar
+
+**Important:** To make the scrollbar works properly you need to add the follow div. Otherwise, the scroll would be next to the bar.
+
+```html
+<div id="mainContent" class="main-content">
+   <!-- main content goes here -->
+</div>
+```
+
+
 ## Screenshots
 
 ![electron-draggable-bar](/image/screen.jpg)

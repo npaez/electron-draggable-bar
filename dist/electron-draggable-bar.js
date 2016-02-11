@@ -7,7 +7,6 @@
       var closeBtn    = document.getElementById("closeBtn"),
           minimizeBtn = document.getElementById("minimizeBtn"),
           maximizeBtn = document.getElementById("maximizeBtn"),
-          mainContent = document.getElementById("mainContent"),
           window      = BrowserWindow.getFocusedWindow();
       minimizeBtn.addEventListener("click", function(e) { window.minimize(); });
       maximizeBtn.addEventListener("click", function(e) {
@@ -26,8 +25,9 @@
    resizeWin();
    window.onresize = resizeWin;
    function resizeWin() {
-      var nav = document.getElementsByClassName('doble-tool');
-      var viewportheight;
+      var mainContent    = document.getElementById("mainContent");
+      var nav            = document.getElementsByClassName('doble-tool');
+      var viewportheight = null;
       if(nav.length) {
          viewportheight = document.documentElement.clientHeight - 65;
       } else {
