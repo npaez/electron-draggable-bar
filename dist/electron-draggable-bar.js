@@ -7,25 +7,33 @@
       var closeBtn    = document.getElementById("closeBtn"),
           minimizeBtn = document.getElementById("minimizeBtn"),
           maximizeBtn = document.getElementById("maximizeBtn"),
+          mainContent = document.getElementById("mainContent"),
           window      = BrowserWindow.getFocusedWindow();
-      
-      minimizeBtn.addEventListener("click", function(e) {
-         window.minimize();
-      });
-
+      minimizeBtn.addEventListener("click", function(e) { window.minimize(); });
       maximizeBtn.addEventListener("click", function(e) {
          window.isMaximized() ? window.unmaximize() : window.maximize();
       });
-
-      closeBtn.addEventListener("click", function(e) {
-         window.close();
-      }); 
+      closeBtn.addEventListener("click", function(e) { window.close(); }); 
    }; 
-
+   
    document.onreadystatechange = function () {
-      if (document.readyState == "complete") {
-         init(); 
-      };
+      if (document.readyState == "complete") init();
+   };
+
+   /*!
+    * Resizesable windows overflow
+    */
+   resizeWin();
+   window.onresize = resizeWin;
+   function resizeWin() {
+      var nav = document.getElementsByClassName('doble-tool');
+      var viewportheight;
+      if(nav.length) {
+         viewportheight = document.documentElement.clientHeight - 65;
+      } else {
+         viewportheight = document.documentElement.clientHeight - 35;
+      };      
+      mainContent.style.height = viewportheight + 'px';
    };
 
    // Disabled windows when is not been focused

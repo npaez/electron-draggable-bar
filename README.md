@@ -4,6 +4,11 @@ Draggable windows for Electron applications
 > **Note:** This extension was only tested on Linux and it's possible to work on Windows (not tested yet).
             For OSX users, please use [kapetan's electron-drag](https://github.com/kapetan/electron-drag).
 
+## News
+
+- 11/02: Fix scrollbar (See screenshots).
+
+
 ## Getting Started
 Include both `electron-draggable-bar.js` and `electron-draggable-bar.css` in your project.
 Comming soon npm & bower packages.
@@ -27,11 +32,11 @@ This is the most basic structure:
          </span>
       </div>
       <div class="windows-buttons">
-         <span id="minimzeBtn"
+         <span id="minimizeBtn"
                class="btn-header">
             <i class="ion-android-remove"></i>
          </span>
-         <span id="maximazeBtn"
+         <span id="maximizeBtn"
                class="btn-header">
             <i class="ion-android-checkbox-outline-blank"></i>
          </span>
@@ -67,11 +72,11 @@ Basic structure:
          </span>
       </div>
       <div class="windows-buttons">
-         <span id="minimzeBtn"
+         <span id="minimizeBtn"
                class="btn-header">
             <!-- icons -->
          </span>
-         <span id="maximazeBtn"
+         <span id="maximizeBtn"
                class="btn-header">
             <!-- icons -->
          </span>
@@ -178,9 +183,12 @@ Example:
 
 ![electron-draggable-bar](/image/screen3.jpg)
 
+![electron-draggable-bar](/image/screen5.jpg)
+
+![electron-draggable-bar](/image/screen6.jpg)
+
 ## TODO (future releases)
 
-- The scroll-bar is not well display.
 - An Angular implementation.
 - Display the dropdown-menu on click.
 - More Themes. (Dark, Ubuntu/Mint looks, etc).
