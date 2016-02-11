@@ -1,15 +1,15 @@
 (function () {
-   var remote        = require('remote'); 
-   var BrowserWindow = remote.require('browser-window'); 
-   var innerBlur = document.getElementById("innerBlur");
+   var remote        = require('remote'),
+       BrowserWindow = remote.require('browser-window'),
+       innerBlur     = document.getElementById("innerBlur");
 
    function init() { 
       var closeBtn    = document.getElementById("closeBtn"),
-          minimizeBtn = document.getElementById("minimzeBtn"),
-          maximizeBtn = document.getElementById("maximazeBtn"),
+          minimizeBtn = document.getElementById("minimizeBtn"),
+          maximizeBtn = document.getElementById("maximizeBtn"),
           window      = BrowserWindow.getFocusedWindow();
       
-      minimzeBtn.addEventListener("click", function(e) {
+      minimizeBtn.addEventListener("click", function(e) {
          window.minimize();
       });
 
