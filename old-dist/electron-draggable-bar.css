@@ -4,28 +4,48 @@ html {
 
 body {
    height: 100%;
+   border: 2px solid #dbdbdb;
    overflow: hidden;
 }
 
-.navigation-tool {
-   height: auto;
+#innerBlur {
+   position: absolute;
+   width: calc(100% - 4px);
+   height: calc(100% - 4px);
+   z-index: 4;
+   background-color: rgba(0, 0, 0, 0);
+   display: none;
+}
+
+#innerBlur.blurred {
    display: block;
-   border: 2px solid #dbdbdb;
+}
+
+.navigation-tool {
+   height: 30px;
+   display: block;
+   border-bottom: 1px solid #dbdbdb;
    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.16),0 2px 6px 0 rgba(0,0,0,0.12);
    position: relative;
 }
 
-.navigation-tool.double-tool {
-   height: auto;
+.navigation-tool.doble-tool {
+   height: 60px;
 }
 
 .navigation-tool .background {
+   position: fixed;
    height: 30px;
    width: calc(100% - 69px);
    z-index: 5;
 }
 
-.navigation-tool.double-tool .background-double,
+.navigation-tool.doble-tool .background-doble {
+   padding-top: 30px;
+   height: 30px;
+}
+
+.navigation-tool.doble-tool .background-doble,
 .navigation-tool .background,
 .navigation-tool .windows-buttons {
    background-color: #e0e0e0;
@@ -67,11 +87,9 @@ body {
 
 .navigation-tool ul.windows-menu {
    list-style-type: none;
-   width: 100%;
    margin: 0;
    padding: 0;
    display: inline-block;
-   background-color: #e0e0e0;
 }
 
 .navigation-tool ul.windows-menu li {
@@ -80,7 +98,6 @@ body {
    position: relative;
    -webkit-user-select: none;
    user-select: none;
-   cursor: default;
 }
 
 .navigation-tool ul.windows-menu li a.dropdown-toggle {
@@ -92,7 +109,6 @@ body {
    display: inline-block;
    color: #333;
    font-size: 14px;
-   cursor: default;
 }
 
 .navigation-tool ul.windows-menu li a.dropdown-toggle.active {
@@ -141,7 +157,6 @@ body {
    color: #333;
    padding: 8px 0 8px 16px;
    text-decoration: none;
-   cursor: default;
    font-size: 14px;
 }
 
@@ -151,6 +166,4 @@ body {
 
 .main-content {
    overflow-y: auto;
-   border: 2px solid #dbdbdb;
-   border-top: 0;
 }

@@ -7,33 +7,16 @@
       <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
       <link rel="stylesheet" href="../dist/electron-draggable-bar.css">
    </head>
-   <body style="background-color: #fafafa">
-      <nav class="navigation-tool doble-tool">
-         <div id="innerBlur"></div>
-         
-         <!-- simple tool -->
-         <div class="background-simple">
-            <div class="background">
-               <span class="windows-title">electron-draggable-bar</span>
-            </div>
-            <div class="windows-buttons">
-               <span id="minimizeBtn" class="btn-header">
-                  <i class="ion-android-remove"></i>
-               </span>
-               <span id="maximizeBtn" class="btn-header">
-                  <i class="ion-android-checkbox-outline-blank"></i>
-               </span>
-               <span id="closeBtn" class="btn-header">
-                  <i class="ion-android-close"></i>
-               </span>
-            </div>
-         </div>
-         
-         <!-- doble tool with dropdown buttons -->
-         <div class="background-doble">
+   <body ng-app="demoApp" style="background-color: #fafafa">
+      <nav ng-controller="demoCtrl">
+         <electron-nav title="electron-draggable-bar"
+                       min-icon="ion-android-remove"
+                       max-icon="ion-android-checkbox-outline-blank"
+                       close-icon="ion-android-close"
+                       double-tool="true">
             <ul class="windows-menu">
                <li class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">First Menu</a>
+                  <a href="#" class="dropdown-toggle">First Menu</a>
                   <ul class="dropdown-menu">
                      <li><a href="#">Action</a></li>
                      <li><a href="#">Another action</a></li>
@@ -44,7 +27,7 @@
                   </ul>
                </li>
                <li class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Second Menu</a>
+                  <a href="#" class="dropdown-toggle">Second Menu</a>
                   <ul class="dropdown-menu">
                      <li><a href="#">Action</a></li>
                      <li><a href="#">Another action</a></li>
@@ -55,69 +38,72 @@
                   </ul>
                </li>
                <li class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu</a>
+                  <a href="#" class="dropdown-toggle">Menu with Actions</a>
                   <ul class="dropdown-menu">
-                     <li><a href="#">Action</a></li>
-                     <li><a href="#">Another action</a></li>
+                     <li><a href="#" ng-click="showAlert()">Fire Alert</a></li>
+                     <li><a href="#" ng-click="exitWindow()">Exit</a></li>
                      <li><a href="#">Something else here</a></li>
                   </ul>
                </li>
             </ul>
-         </div>
+         </electron-nav>
       </nav>
 
-      <div id="mainContent" class="main-content" style="paddin-right: 10px; padding-left: 10px">
-         <h1>Title</h1>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <electron-content>
+         <div style="padding: 20px">
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+         </div>
+      </electron-content>      
+      <script>require('./angular.min.js')</script>
+      <script>require('./demo.js')</script>
       <script>require('../dist/electron-draggable-bar.js')</script>
    </body>
 </html>
