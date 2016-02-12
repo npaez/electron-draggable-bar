@@ -4,7 +4,8 @@
 
 > **Note:** This extension was only tested on Linux and it's possible to work on Windows (not tested yet).
             For OSX users, please use [kapetan's electron-drag](https://github.com/kapetan/electron-drag).
-> **Note2:** The current version is based on Angular directives. For a pure javascript implementation check the [old-dist folder](https://github.com/npaez/electron-draggable-bar/tree/master/old-dist)
+
+> **Note:** The current version is based on Angular. For a pure javascript implementation check the [old-dist folder](https://github.com/npaez/electron-draggable-bar/tree/master/old-dist)
 
 
 ## News
@@ -32,7 +33,7 @@ angular.module('demoApp', [
 ```
 
 ## Usage
-### Basic bar.
+### Basic bar
 This is the most basic structure:
 
 ```html
@@ -45,7 +46,7 @@ This is the most basic structure:
 - title: Sets the title of the windows.
 - *-icon: Sets the windows action buttons. (min: minimize, max: maximize). This attrs receive the icon's class name. i.e. `close-icon="ion-android-close"`
 
-### Adding a menu bar.
+### Adding a menu bar
 Basic structure:
 ```html
 <electron-nav title="electron-draggable-bar"
@@ -67,7 +68,7 @@ Basic structure:
 </nav>
 ```
 > **Note:** 
-> - For add a double-nav you need to set `true` the `double-tool` attribute on `<electron-nav>` tag.
+> - To add a double-nav you need to set `true` the `double-tool` attribute on `<electron-nav>` tag.
 > - Multilevel dropdown menus *not supported*.
 
 ### Fixing scroll-bar
@@ -98,13 +99,16 @@ Basic structure:
 
 ![electron-draggable-bar](/image/screen6.jpg)
 
+
 ## Demo
-Clone this repo, and run `electro .` or `npm start` in the /demo folder for run demo.
+Clone this repo, and run `electro .` or `npm start` in the /demo folder.
+
 
 ## ToDo (future releases)
 - Display the dropdown-menu on click.
 - Support multilevel dropdowns.
 - More Themes. (Dark, Ubuntu/Mint looks, etc).
+
 
 ## License
 This seed is released under permissive MIT License.
