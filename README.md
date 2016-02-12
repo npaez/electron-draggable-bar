@@ -1,6 +1,8 @@
 # electron-draggable-bar
 Angular directives for a draggable windows for an Electron application.
 
+![electron-draggable-bar](/image/image.jpg)
+
 > **Note:** This extension was only tested on Linux and it's possible to work on Windows (not tested yet).
             For OSX users, please use [kapetan's electron-drag](https://github.com/kapetan/electron-drag).
 > **Note2:** The current version is based on Angular directives. For a pure javascript implementation check the [old-dist folder](https://github.com/npaez/electron-draggable-bar/tree/master/old-dist)
