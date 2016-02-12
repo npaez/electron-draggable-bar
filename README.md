@@ -1,5 +1,4 @@
 # electron-draggable-bar
-Angular directives for a draggable windows for an Electron application.
 
 ![electron-draggable-bar](/image/image.jpg)
 
