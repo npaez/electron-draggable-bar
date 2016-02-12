@@ -1,11 +1,13 @@
 # electron-draggable-bar
-Draggable windows for Electron applications
+Angular directives for a draggable windows for an Electron application.
 
 > **Note:** This extension was only tested on Linux and it's possible to work on Windows (not tested yet).
             For OSX users, please use [kapetan's electron-drag](https://github.com/kapetan/electron-drag).
+> **Note2:** The current version is based on Angular directives. For a pure javascript implementation check the [old-dist folder](https://github.com/npaez/electron-draggable-bar/tree/master/old-dist)
+
 
 ## News
-
+- 12/02: Angular implementation.
 - 11/02: Fix scrollbar (See screenshots).
 
 
@@ -21,168 +23,65 @@ Comming soon npm & bower packages.
 <script>require('path/to/electron-draggable-bar.js')</script>
 ```
 
+And specify angular-cards as a dependency of your Angular module
+```js
+angular.module('demoApp', [
+   "electron-draggable-bar"
+]);
+```
+
+## Usage
+### Basic bar.
 This is the most basic structure:
 
 ```html
-<nav class="navigation-tool">
-   <div class="background-simple">
-      <div class="background">
-         <span class="windows-title">
-         	electron-draggable-bar v.0.0.1
-         </span>
-      </div>
-      <div class="windows-buttons">
-         <span id="minimizeBtn"
-               class="btn-header">
-            <i class="ion-android-remove"></i>
-         </span>
-         <span id="maximizeBtn"
-               class="btn-header">
-            <i class="ion-android-checkbox-outline-blank"></i>
-         </span>
-         <span id="closeBtn"
-               class="btn-header">
-            <i class="ion-android-close"></i>
-         </span>
-      </div>
-   </div>
-</nav>
+<electron-nav title
+              min-icon
+              max-icon
+              close-icon
+</electron-nav>
 ```
-> **Note:** 
-> - This example is using Ionicons. But it can work with other icon libraries.
-> - **Do not** modify the IDs. This will be improved in future releases.
+- title: Sets the title of the windows.
+- *-icon: Sets the windows action buttons. (min: minimize, max: maximize). This attrs receive the icon's class name. i.e. `close-icon="ion-android-close"`
 
-
-Result:
-
-![electron-draggable-bar](/image/screen4.jpg)
-
-## Adding a menu bar.
-
+### Adding a menu bar.
 Basic structure:
-
 ```html
-<nav class="navigation-tool doble-tool">
-   <div id="innerBlur"></div>
-   <!-- main-bar -->
-   <div class="background-simple">
-      <div class="background">
-         <span class="windows-title">
-         	<!-- title -->
-         </span>
-      </div>
-      <div class="windows-buttons">
-         <span id="minimizeBtn"
-               class="btn-header">
-            <!-- icons -->
-         </span>
-         <span id="maximizeBtn"
-               class="btn-header">
-            <!-- icons -->
-         </span>
-         <span id="closeBtn"
-               class="btn-header">
-            <!-- icons -->
-         </span>
-      </div>
-   </div>
-   <!-- menu-bar -->
-   <div class="background-doble">
-      <ul class="windows-menu">
-         <li class="dropdown">
-            <a href="#"
-               data-toggle="dropdown"
-               class="dropdown-toggle">
-            	<!-- menu name -->
-             </a>
-            <ul class="dropdown-menu">
-               <li>
-               	<a href="#">
-               		<!-- action -->
-               	</a>
-               </li>
-            </ul>
-         </li>
-      </ul>
-   </div>
+<electron-nav title="electron-draggable-bar"
+              min-icon="ion-android-remove"
+              max-icon="ion-android-checkbox-outline-blank"
+              close-icon="ion-android-close"
+              double-tool="true">
+   <ul class="windows-menu">
+      <li class="dropdown">
+         <a href="#" class="dropdown-toggle"><!-- Menu title goes here --></a>
+         <ul class="dropdown-menu">
+            <li><a href="#"><!-- Submenu title goes here --></a></li>
+            <li class="separator"></li> <!-- Use this to make a separator -->
+            <li><a href="#"><!-- Another submenu title --></a></li>
+         </ul>
+      </li>
+   </ul>
+</electron-nav>
 </nav>
 ```
 > **Note:** 
-> - **Don't forget** to include the `<div id="innerBlur"></div>`. This prevent the display in the dropdown-menus when the windows is not the main focus
-> - **Do not** modify the IDs. This will be improved in future releases.
-> - To separate a group of links from others, use `<li class="separator"></li>`
+> - For add a double-nav you need to set `true` the `double-tool` attribute on `<electron-nav>` tag.
+> - Multilevel dropdown menus *not supported*.
 
+### Fixing scroll-bar
 
-Example:
-
-```html
-<nav class="navigation-tool doble-tool">
-   <div id="innerBlur"></div>
-   <!-- main-bar -->
-   <div class="background-simple">
-      <div class="background">
-         <span class="windows-title">
-         	electron-draggable-bar v.0.0.1
-         </span>
-      </div>
-      <div class="windows-buttons">
-         <span id="minimzeBtn" class="btn-header">
-            <i class="ion-android-remove"></i>
-         </span>
-         <span id="maximazeBtn" class="btn-header">
-            <i class="ion-android-checkbox-outline-blank"></i>
-         </span>
-         <span id="closeBtn" class="btn-header">
-            <i class="ion-android-close"></i>
-         </span>
-      </div>
-   </div>
-   <!-- menu-bar -->
-   <div class="background-doble">
-      <ul class="windows-menu">
-         <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">First Menu</a>
-            <ul class="dropdown-menu">
-               <li><a href="#">Action</a></li>
-               <li><a href="#">Another action</a></li>
-               <li><a href="#">Something else here</a></li>
-               <li class="separator"></li>
-               <li><a href="#">Separated link</a></li>
-               <li><a href="#">Another separated link</a></li>
-            </ul>
-         </li>
-         <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Second Menu</a>
-            <ul class="dropdown-menu">
-               <li><a href="#">Action</a></li>
-               <li><a href="#">Another action</a></li>
-               <li><a href="#">Something else here</a></li>
-               <li class="separator"></li>
-               <li><a href="#">Separated link</a></li>
-               <li><a href="#">Another separated link</a></li>
-            </ul>
-         </li>
-         <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu</a>
-            <ul class="dropdown-menu">
-               <li><a href="#">Action</a></li>
-               <li><a href="#">Another action</a></li>
-               <li><a href="#">Something else here</a></li>
-            </ul>
-         </li>
-      </ul>
-   </div>
-</nav>
-```
-
-## Fixing scroll-bar
-
-**Important:** To make the scrollbar works properly you need to add the follow div. Otherwise, the scroll would be next to the bar.
+**Important:** To make the scrollbar works properly you need wrap your main content in a `<electron-content>` tag . Otherwise, the scroll would be next to the bar.
 
 ```html
-<div id="mainContent" class="main-content">
+<electron-nav title="electron-draggable-bar"
+              min-icon="ion-android-remove"
+              max-icon="ion-android-checkbox-outline-blank"
+              close-icon="ion-android-close"
+</electron-nav>
+<electron-content>
    <!-- main content goes here -->
-</div>
+</electron-content>
 ```
 
 
@@ -198,10 +97,12 @@ Example:
 
 ![electron-draggable-bar](/image/screen6.jpg)
 
-## TODO (future releases)
+## Demo
+Clone this repo, and run `electro .` or `npm start` in the /demo folder for run demo.
 
-- An Angular implementation.
+## ToDo (future releases)
 - Display the dropdown-menu on click.
+- Support multilevel dropdowns.
 - More Themes. (Dark, Ubuntu/Mint looks, etc).
 
 ## License
