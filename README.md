@@ -1,4 +1,5 @@
 # electron-draggable-bar
+## :warning: Please note, this project is deprecated and no longer being maintained
 
 ![electron-draggable-bar](/image/image.jpg)
 
